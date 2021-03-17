@@ -17,24 +17,24 @@ $specialColor: salmon;
 
 .main-conversion {
   &__headline {
-    padding-left: 15%;
-    font-size: 33px;
     display: flex;
     align-items: baseline;
+    padding-left: 15%;
+    font-size: 33px;
   }
 
   &__headline::before {
-    content: "|";
+    content: "| ";
     color: red;
     font-size: 47px;
   }
 
-  &__content-box {
+  &__content {
     display: flex;
     justify-content: space-between;
     background-color: rgb(230, 230, 230);
 
-    &-text-box {
+    &-text-wrapper {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -62,30 +62,30 @@ $specialColor: salmon;
 }
 
 .main-conversion--red-headline {
-  .main-conversion__content-box-text-box-headline {
+  .main-conversion__content-text-wrapper-headline {
     color: $specialColor;
   }
 }
 
 .main-conversion--secondary-conversion {
-  .main-conversion__content-box {
+  .main-conversion__content {
     flex-direction: row-reverse;
   }
 
-  .main-conversion__content-box-text-box {
+  .main-conversion__content-text-wrapper {
     padding-left: 0px;
     padding-right: 20%;
 
-    .main-conversion__content-box-text-box-headline {
+    .main-conversion__content-text-wrapper-headline {
       font-size: 25px;
     }
 
-    .main-conversion__content-box-text-box-button {
+    .main-conversion__content-text-wrapper-button {
       background-color: $specialColor;
     }
   }
 
-  .main-conversion__content-box-img {
+  .main-conversion__content-img {
     width: 20%;
     padding: 40px 30px 40px 15%;
   }
