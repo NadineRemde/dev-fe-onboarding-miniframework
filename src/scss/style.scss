@@ -15,73 +15,78 @@
 
 $specialColor: salmon;
 
-.block__headline {
-  padding-left: 15%;
-  font-size: 33px;
-  display: flex;
-  align-items: baseline;
-}
-
-.block__headline::before {
-  content: "|";
-  color: red;
-  font-size: 47px;
-}
-
-.contentBox {
-  display: flex;
-  justify-content: space-between;
-  background-color: rgb(230, 230, 230);
-
-  .contentBox__text-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    align-content: center;
+.main-conversion {
+  &__headline {
     padding-left: 15%;
+    font-size: 33px;
+    display: flex;
+    align-items: baseline;
+  }
 
-    .text-box__headline {
-      font-size: 30px;
-      margin-right: 140px;
-      margin-bottom: 0px;
+  &__headline::before {
+    content: "|";
+    color: red;
+    font-size: 47px;
+  }
+
+  &__content-box {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(230, 230, 230);
+
+    &-text-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      align-content: center;
+      padding-left: 15%;
+
+      &-headline {
+        font-size: 30px;
+        margin-right: 140px;
+        margin-bottom: 0px;
+      }
+      &-button {
+        color: white;
+        background-color: black;
+        border: none;
+        padding: 8px 10px 8px 10px;
+        margin-top: 20px;
+      }
     }
+    &-img {
+      width: 50%;
+    }
+  }
+}
 
-    .text-box__headline--secondaryConversion {
+.main-conversion--red-headline {
+  .main-conversion__content-box-text-box-headline {
+    color: $specialColor;
+  }
+}
+
+.main-conversion--secondary-conversion {
+  .main-conversion__content-box {
+    flex-direction: row-reverse;
+  }
+
+  .main-conversion__content-box-text-box {
+    padding-left: 0px;
+    padding-right: 20%;
+
+    .main-conversion__content-box-text-box-headline {
       font-size: 25px;
     }
 
-    .text-box__button {
-      color: white;
-      background-color: black;
-      border: none;
-      padding: 8px 10px 8px 10px;
-      margin-top: 20px;
-    }
-
-    .text-box__button--secondaryConversion {
+    .main-conversion__content-box-text-box-button {
       background-color: $specialColor;
     }
   }
-  .contentBox__text-box--secondaryConversion {
-    padding-left: 0px;
-    padding-right: 33%;
-  }
 
-  .contentBox__img {
-    width: 50%;
-  }
-
-  .contentBox__img--secondaryConversion {
+  .main-conversion__content-box-img {
     width: 20%;
-    padding: 40px 0px 40px 15%;
+    padding: 40px 30px 40px 15%;
   }
-}
-
-.text-box__headline--redHeadline {
-  color: $specialColor;
-}
-
-.contentBox--secondaryConversion {
-  flex-direction: row-reverse;
 }
