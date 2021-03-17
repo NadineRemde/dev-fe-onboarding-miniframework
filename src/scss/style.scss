@@ -1,18 +1,3 @@
-// body {
-//   background-color: pink;
-//   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-//   height: 2000px;
-// }
-
-// .content {
-//   position: absolute;
-//   top: 600px;
-//   background-color: #fefefe;
-//   padding: 50px;
-//   margin: 20px;
-//   box-shadow: inset 1px 1px 11px 0px black;
-// }
-
 $specialColor: salmon;
 
 .main-conversion {
@@ -76,17 +61,17 @@ $specialColor: salmon;
     padding-left: 0px;
     padding-right: 20%;
 
-    .main-conversion__content-text-wrapper-headline {
+    &-headline {
       font-size: 25px;
     }
 
-    .main-conversion__content-text-wrapper-button {
+    &-button {
       background-color: $specialColor;
     }
   }
 
   .main-conversion__content-img {
-    width: 20%;
+    width: 30%;
     padding: 40px 30px 40px 15%;
   }
 }
