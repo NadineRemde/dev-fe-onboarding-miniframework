@@ -1,5 +1,5 @@
 $specialColor: salmon;
-$contactboxColor:  rgb(34, 34, 65);
+$contactboxColor: rgb(34, 34, 65);
 
 .main-conversion {
   &__headline {
@@ -56,28 +56,27 @@ $contactboxColor:  rgb(34, 34, 65);
 .main-conversion--secondary-conversion {
   .main-conversion__content {
     flex-direction: row-reverse;
-  }
 
-  .main-conversion__content-text-wrapper {
-    padding-left: 0px;
-    padding-right: 20%;
+    &-text-wrapper {
+      padding-left: 0px;
+      padding-right: 20%;
 
-    &-headline {
-      font-size: 25px;
+      &-headline {
+        font-size: 25px;
+      }
+
+      &-button {
+        background-color: $specialColor;
+      }
     }
 
-    &-button {
-      background-color: $specialColor;
+    &-img {
+      width: 30%;
+      padding: 40px 30px 40px 15%;
     }
-  }
-
-  .main-conversion__content-img {
-    width: 30%;
-    padding: 40px 30px 40px 15%;
   }
 }
-
-.text-box {
+.tooltip {
   display: none;
   height: 200px;
   background-color: $contactboxColor;
