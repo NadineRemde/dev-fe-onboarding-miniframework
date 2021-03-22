@@ -45,6 +45,37 @@ $contactboxColor: rgb(34, 34, 65);
       width: 50%;
     }
   }
+
+  &__tooltip {
+    display: none;
+    height: 200px;
+    background-color: $contactboxColor;
+    margin-top: 20px;
+
+    &--opening {
+      display: block;
+    }
+
+    &--closing {
+      display: none;
+    }
+    &-triangle {
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid $contactboxColor;
+      position: relative;
+      left: 14%;
+      bottom: 9px;
+    }
+
+    &-text {
+      color: white;
+      font-size: 25px;
+      padding-left: 15%;
+    }
+  }
 }
 
 .main-conversion--red-headline {
@@ -76,26 +107,4 @@ $contactboxColor: rgb(34, 34, 65);
     }
   }
 }
-.tooltip {
-  display: none;
-  height: 200px;
-  background-color: $contactboxColor;
-  margin-top: 20px;
 
-  &__triangle {
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 10px solid $contactboxColor;
-    position: relative;
-    left: 14%;
-    bottom: 9px;
-  }
-
-  &__text {
-    color: white;
-    font-size: 25px;
-    padding-left: 15%;
-  }
-}

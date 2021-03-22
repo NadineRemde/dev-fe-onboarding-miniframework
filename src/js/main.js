@@ -5,66 +5,60 @@
 
 // animatedScrollTo(500);
 
-
-//Variablen zum Testen
-let firstBtnNumber = 0;
-let secondBtnNumber = 1;
-let thirdBtnNumber = 2;
-
-
-//Funktion mit der das Tooltip erscheint für die mauelle Variante
-function openTextbox(x) {
-  let box = document.getElementsByClassName("tooltip")[x];
-  box.style.display = "block";
-  return true;
-}
-
-//Allen Buttons soll das Event Click zugewiesen werden
-let btnList = document.querySelectorAll(".main-conversion__content-text-wrapper-button"); //<-- Warum muss hier der Punkt vor die Klasse?
-console.log(btnList);
-// ...
-
-//Zuweisung des Events manuell 
-let firstButton = document.getElementsByClassName(
-  "main-conversion__content-text-wrapper-button" //<-- Warum muss man hier den Punkt nicht vor der Klasse setzten?
-)[0];
-firstButton.addEventListener("click", function (){
-  openTextbox(firstBtnNumber);
+//Alle Buttons soll das Event Click zugewiesen werden
+let btnList = document.querySelectorAll(
+  ".main-conversion__content-text-wrapper-button"
+);
+btnList.forEach((button) => {
+  button.addEventListener("click", function (){
+    moveTooltip(event);                                           //Alternative zu Event?
+  });
 });
 
-let secondButton = document.getElementsByClassName(
-    "main-conversion__content-text-wrapper-button"
-)[1];
-secondButton.addEventListener("click", function () {
-    openTextbox(secondBtnNumber);
-});
-
-let thirdButton = document.getElementsByClassName(
-    "main-conversion__content-text-wrapper-button"
-  )[2];
-  thirdButton.addEventListener("click", function () {
-    openTextbox(thirdBtnNumber);
+//Funktion mit der das Tooltip geöffnet oder geschlossen wird
+function moveTooltip(evt) {
+  let divBoxesOpen = document.querySelectorAll(".main-conversion__tooltip--opening");
+  let targetElem = evt.target.closest(".main-conversion").querySelector(".main-conversion__tooltip");
+ 
+    divBoxesOpen.forEach((divBox) => {
+    divBox.classList.remove("main-conversion__tooltip--opening");  
+    divBox.classList.add("main-conversion__tooltip--closing");
   });
 
+  targetElem.classList.add("main-conversion__tooltip--opening");
+  targetElem.classList.remove("main-conversion__tooltip--closing");
+}
 
+//Zuweisung des Events manuell
+//Variablen zum Testen
+// let firstBtnNumber = 0;
+// let secondBtnNumber = 1;
+// let thirdBtnNumber = 2;
 
-// Test Area -- Der Versuch ein Array zu erzeugen welches die Werte von 0 bis n enthält.
-  let arr = [];
+//Funktion mit der das Tooltip erscheint für die mauelle Variante
+// function openTextbox(x) {
+//   let box = document.getElementsByClassName("tooltip")[x];
+//   box.style.display = "block";
+//   return true;
+// }
 
-  function divCounter(){
-    let div = document.getElementsByClassName("tooltip");
-    let erg = div.length;
+// let firstButton = document.getElementsByClassName(
+//   "main-conversion__content-text-wrapper-button"
+// )[0];
+// firstButton.addEventListener("click", function (){
+//   openTextbox(firstBtnNumber);
+// });
 
-    arr.length = erg;
+// let secondButton = document.getElementsByClassName(
+//     "main-conversion__content-text-wrapper-button"
+// )[1];
+// secondButton.addEventListener("click", function () {
+//     openTextbox(secondBtnNumber);
+// });
 
-    if(arr.length > erg){
-      return arr
-    } else {
-      arr.fill("Div found", 0, erg);
-    }
-    
-    console.log(erg);
-    console.log(arr);
-  }
-
-  divCounter();
+// let thirdButton = document.getElementsByClassName(
+//     "main-conversion__content-text-wrapper-button"
+//   )[2];
+//   thirdButton.addEventListener("click", function () {
+//     openTextbox(thirdBtnNumber);
+//   });
