@@ -1,10 +1,3 @@
-// import {animatedScrollTo} from './es6-scroll-to.js';
-
-// document.querySelector('.title').innerHTML = 'Great success!'
-// document.querySelector('.text').innerHTML = 'Javascript is working!'
-
-// animatedScrollTo(500);
-
 //All buttons get the EventListener "click"
 const btnList = document.querySelectorAll(
   ".main-conversion__content-text-wrapper-button"
@@ -15,7 +8,8 @@ btnList.forEach((button) => {
   });
 });
 
-let check = false;
+//Variable to open and close the tooltip
+// let check = false;
 
 //Function that is opening and closing the tooltip
 const toggleTooltip = (evt) => {
@@ -28,26 +22,37 @@ const toggleTooltip = (evt) => {
 
   divBoxesOpen.forEach((divBox) => {
     divBox.classList.remove("main-conversion__tooltip--open");
+    divBox.classList.add("main-conversion__tooltip--close");
   });
 
-  if (check == false){
+  if (!targetElem.classList.contains("main-conversion__tooltip--open")) {
     targetElem.classList.add("main-conversion__tooltip--open");
-    check = true;
-
-  } else if (check == true){
-    targetElem.classList.remove("main-conversion__tooltip--open");
-    check = false;
+    targetElem.classList.remove("main-conversion__tooltip--close");
   }
-
+  
 };
 
-//Zuweisung des Events manuell
-//Variablen zum Testen
+// --Open and close with a variable (same button)--
+// divBoxesOpen.forEach((divBox) => {
+//   divBox.classList.remove("main-conversion__tooltip--open");
+//   divBox.classList.remove("main-conversion__tooltip--close");
+// });
+
+//   if (check == false) {
+//     targetElem.classList.add("main-conversion__tooltip--open");
+//     check = true;
+//   } else {
+//     targetElem.classList.add("main-conversion__tooltip--close");
+//     check = false;
+//   }
+
+//--Zuweisung des Events manuell--
+//--Variablen zum Testen--
 // let firstBtnNumber = 0;
 // let secondBtnNumber = 1;
 // let thirdBtnNumber = 2;
 
-//Funktion mit der das Tooltip erscheint für die mauelle Variante
+//--Funktion mit der das Tooltip erscheint für die mauelle Variante--
 // function openTextbox(x) {
 //   let box = document.getElementsByClassName("tooltip")[x];
 //   box.style.display = "block";
