@@ -5,29 +5,36 @@
 
 // animatedScrollTo(500);
 
-//Alle Buttons soll das Event Click zugewiesen werden
-let btnList = document.querySelectorAll(
+//All buttons get the EventListener "click"
+const btnList = document.querySelectorAll(
   ".main-conversion__content-text-wrapper-button"
 );
 btnList.forEach((button) => {
-  button.addEventListener("click", function (){
-    moveTooltip(event);                                           //Alternative zu Event?
+  button.addEventListener("click", function (e) {
+    moveTooltip(e);
   });
 });
 
-//Funktion mit der das Tooltip geöffnet oder geschlossen wird
-function moveTooltip(evt) {
-  let divBoxesOpen = document.querySelectorAll(".main-conversion__tooltip--opening");
-  let targetElem = evt.target.closest(".main-conversion").querySelector(".main-conversion__tooltip");
- 
-    divBoxesOpen.forEach((divBox) => {
-    divBox.classList.remove("main-conversion__tooltip--opening");  
-    divBox.classList.add("main-conversion__tooltip--closing");
+//Function that is opening and closing the tooltip
+const moveTooltip = (evt) => {
+  let divBoxesOpen = document.querySelectorAll(
+    ".main-conversion__tooltip--open"
+  );
+  let targetElem = evt.target
+    .closest(".main-conversion")
+    .querySelector(".main-conversion__tooltip");
+
+  divBoxesOpen.forEach((divBox) => {
+    divBox.classList.remove("main-conversion__tooltip--open");
   });
 
-  targetElem.classList.add("main-conversion__tooltip--opening");
-  targetElem.classList.remove("main-conversion__tooltip--closing");
-}
+  if (targetElem.classList.contains("main-conversion__tooltip--open")) {
+    targetElem.classList.remove("main-conversion__tooltip--open");
+  } else {
+    targetElem.classList.add("main-conversion__tooltip--open");
+  }
+  console.log(targetElem.classList);
+};
 
 //Zuweisung des Events manuell
 //Variablen zum Testen

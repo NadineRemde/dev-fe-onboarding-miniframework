@@ -52,11 +52,11 @@ $contactboxColor: rgb(34, 34, 65);
     background-color: $contactboxColor;
     margin-top: 20px;
 
-    &--opening {
+    &--open {
       display: block;
     }
 
-    &--closing {
+    &--close {
       display: none;
     }
     &-triangle {
