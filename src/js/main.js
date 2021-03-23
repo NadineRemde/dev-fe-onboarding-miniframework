@@ -11,12 +11,14 @@ const btnList = document.querySelectorAll(
 );
 btnList.forEach((button) => {
   button.addEventListener("click", function (e) {
-    moveTooltip(e);
+    toggleTooltip(e);
   });
 });
 
+let check = false;
+
 //Function that is opening and closing the tooltip
-const moveTooltip = (evt) => {
+const toggleTooltip = (evt) => {
   let divBoxesOpen = document.querySelectorAll(
     ".main-conversion__tooltip--open"
   );
@@ -28,12 +30,15 @@ const moveTooltip = (evt) => {
     divBox.classList.remove("main-conversion__tooltip--open");
   });
 
-  if (targetElem.classList.contains("main-conversion__tooltip--open")) {
-    targetElem.classList.remove("main-conversion__tooltip--open");
-  } else {
+  if (check == false){
     targetElem.classList.add("main-conversion__tooltip--open");
+    check = true;
+
+  } else if (check == true){
+    targetElem.classList.remove("main-conversion__tooltip--open");
+    check = false;
   }
-  console.log(targetElem.classList);
+
 };
 
 //Zuweisung des Events manuell
