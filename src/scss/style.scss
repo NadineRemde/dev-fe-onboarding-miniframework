@@ -49,7 +49,6 @@ $contactboxColor: rgb(34, 34, 65);
   }
 
   &__tooltip {
-    // display: none;
     opacity: 0;
     position: relative;
     height: 200px;
@@ -61,18 +60,9 @@ $contactboxColor: rgb(34, 34, 65);
     
 
     &--open {
-      // animation-name: slideDown;
-      // animation-duration: 1s;
-      // display: block;
       margin-top: 20px;
       opacity: 1;
     }
-
-    // &--close {
-    // // animation-name: slideUp;
-    // // animation-duration: 1s;
-    // // display: none;
-    // }
 
     &-triangle {
       width: 0;
@@ -122,22 +112,4 @@ $contactboxColor: rgb(34, 34, 65);
     }
   }
 }
-
-//Keyframe option
-// @keyframes slideDown {
-//   from {
-//     margin-top: -220px;
-//   }
-//   to {
-//     margin-top: 20px;
-//   }
-// }
-
-// @keyframes slideUp {
-//   from {
-//     margin-top: 20px;
-//   }
-//   to {
-//     margin-top: -220px;
-//   }
-// }
+s
