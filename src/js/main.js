@@ -1,7 +1,7 @@
-//All buttons get the EventListener "click"
+//All buttons get the event "onclick"
 const btnList = document.querySelectorAll(".main-conversion__content-button");
 btnList.forEach((button) => {
-  button.onclick = function (e) {
+  button.onclick = (e) => {
     toggleTooltip(e);
   };
 });
@@ -23,7 +23,7 @@ const toggleTooltip = (evt) => {
 
   tooltipsOpen.forEach((tooltip) => {
     if (tooltip !== targetTooltip) {
-      divBox.classList.remove("main-conversion__tooltip--open");
+      tooltip.classList.remove("main-conversion__tooltip--open");
     }
   });
 };
