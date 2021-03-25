@@ -1,4 +1,4 @@
-//All buttons get the event "onclick"
+//The conversion buttons are assigned the function to the onclick
 const btnList = document.querySelectorAll(".main-conversion__content-button");
 btnList.forEach((button) => {
   button.onclick = (e) => {
